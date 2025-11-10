@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhà may Ngự Bình - Rèm Đẹp Cửa Lò</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .logo span {
+            color: #3498db;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 60px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .service-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-img {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .service-content p {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 60px 0;
+            background-color: #f5f7fa;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-text h2 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        /* Zalo Contact Section */
+        .zalo-contact {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+        
+        .zalo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .zalo-info {
+            text-align: center;
+            max-width: 500px;
+        }
+        
+        .zalo-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .zalo-info p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .zalo-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .zalo-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #0068ff;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .zalo-btn:hover {
+            background-color: #0051cc;
+        }
+        
+        .zalo-icon {
+            width: 24px;
+            height: 24px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+        
+        .footer-column p, 
+        .footer-column a {
+            color: #bdc3c7;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .footer-column a:hover {
+            color: #3498db;
+        }
+        
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #34495e;
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+        
+        /* Product Detail Page */
+        .product-detail {
+            padding: 80px 0 60px;
+            background-color: #fff;
+            min-height: 100vh;
+        }
+        
+        .product-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .product-gallery {
+            position: relative;
+        }
+        
+        .main-image {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+        
+        .main-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .thumbnail-gallery {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .thumbnail {
+            width: 70px;
+            height: 70px;
+            border-radius: 5px;
+            overflow: hidden;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .thumbnail:hover, .thumbnail.active {
+            opacity: 1;
+        }
+        
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 10px 0;
+        }
+        
+        .product-info h1 {
+            font-size: 26px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .product-price {
+            font-size: 22px;
+            color: #3498db;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .product-description {
+            margin-bottom: 25px;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .product-features {
+            margin-bottom: 30px;
+        }
+        
+        .product-features h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .product-features ul {
+            list-style-type: none;
+        }
+        
+        .product-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .product-features li:before {
+            content: "✓";
+            color: #27ae60;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .product-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .product-specs {
+            margin-top: 40px;
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .specs-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+        
+        .specs-table td:first-child {
+            font-weight: 600;
+            color: #2c3e50;
+            width: 40%;
+        }
+        
+        /* Floating Back Button - Mobile Friendly */
+        .floating-back-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #3498db;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            z-index: 999;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .floating-back-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        .floating-back-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: row;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 60px);
+                background-color: #fff;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 40px;
+                transition: left 0.3s ease;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .section-title h2 {
+                font-size: 24px;
+            }
+            
+            .service-content h3 {
+                font-size: 18px;
+            }
+            
+            .about-text h2 {
+                font-size: 24px;
+            }
+            
+            .product-info h1 {
+                font-size: 22px;
+            }
+            
+            .product-price {
+                font-size: 20px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .floating-back-btn {
+                width: 60px;
+                height: 60px;
+                bottom: 25px;
+                right: 25px;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .product-container {
+                flex-direction: row;
+            }
+            
+            .product-actions {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">Rèm Đẹp <span>Cửa Lò</span></div>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Trang chủ</a></li>
+                    <li><a href="#services">Dịch vụ</a></li>
+                    <li><a href="#about">Giới thiệu</a></li>
+                    <li><a href="#zalo-contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Nhà may Ngự Bình</h1>
+                <p>Chuyên tư vấn, cung cấp và lắp đặt các loại rèm cao cấp, đa dạng mẫu mã với giá cả cạnh tranh nhất</p>
+                <a href="#services" class="btn">Khám phá ngay</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Dịch Vụ Của Chúng Tôi</h2>
+                <p>Chúng tôi cung cấp đa dạng các loại rèm cửa phù hợp với mọi không gian sống và làm việc</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Rèm Cuốn</h3>
+                        <p>Rèm cuốn hiện đại, tiện lợi với nhiều mẫu mã và chất liệu đa dạng, phù hợp với mọi không gian.</p>
+                        <a href="#product-detail" class="btn" onclick="showProductDetail('Rèm Cuốn Cao Cấp', 1250000, 'rem-cuon')">Xem chi tiết</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Rèm Vải</h3>
+                        <p>Rèm vải cao cấp với nhiều màu sắc, hoa văn đa dạng, mang đến vẻ đẹp sang trọng cho ngôi nhà của bạn.</p>
+                        <a href="#product-detail" class="btn" onclick="showProductDetail('Rèm Vải Cao Cấp', 1850000, 'rem-vai')">Xem chi tiết</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1544457076-6dc240d250e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Rèm Roman</h3>
+                        <p>Rèm Roman với thiết kế tinh tế, kết hợp hoàn hảo giữa vẻ đẹp cổ điển và hiện đại.</p>
+                        <a href="#product-detail" class="btn" onclick="showProductDetail('Rèm Roman Sang Trọng', 2200000, 'rem-roman')">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Section (Initially Hidden) -->
+    <section class="product-detail" id="product-detail" style="display: none;">
+        <div class="container">
+            <div class="product-container">
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img id="product-main-img" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Rèm cửa">
+                    </div>
+                    <div class="thumbnail-gallery">
+                        <div class="thumbnail active" onclick="changeImage('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Rèm cửa 1">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                            <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Rèm cửa 2">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage('https://images.unsplash.com/photo-1544457076-6dc240d250e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                            <img src="https://images.unsplash.com/photo-1544457076-6dc240d250e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Rèm cửa 3">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <h1 id="product-title">Rèm Cuốn Cao Cấp</h1>
+                    <div class="product-price" id="product-price">1.250.000 VNĐ</div>
+                    
+                    <div class="product-description">
+                        <p>Rèm cuốn cao cấp của chúng tôi được làm từ chất liệu vải polyester cao cấp, có độ bền màu và khả năng chống bám bụi tốt. Sản phẩm phù hợp với mọi không gian từ phòng khách, phòng ngủ đến văn phòng làm việc.</p>
+                        <p>Với cơ chế cuốn lên xuống dễ dàng, rèm cuốn giúp kiểm soát ánh sáng tự nhiên một cách linh hoạt, mang lại sự tiện nghi và thẩm mỹ cho không gian sống của bạn.</p>
+                    </div>
+                    
+                    <div class="product-features">
+                        <h3>Đặc điểm nổi bật</h3>
+                        <ul>
+                            <li>Chất liệu vải polyester cao cấp, không phai màu</li>
+                            <li>Hệ thống cuốn êm ái, vận hành trơn tru</li>
+                            <li>Đa dạng màu sắc và họa tiết</li>
+                            <li>Dễ dàng vệ sinh và bảo trì</li>
+                            <li>Chống tia UV, bảo vệ nội thất</li>
+                            <li>Lắp đặt nhanh chóng, chuyên nghiệp</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <a href="https://zalo.me/0326261482" class="btn" target="_blank">Yêu cầu tư vấn</a>
+                    </div>
+                    
+                    <div class="product-specs">
+                        <h3>Thông số kỹ thuật</h3>
+                        <table class="specs-table">
+                            <tr>
+                                <td>Chất liệu</td>
+                                <td>Vải polyester cao cấp</td>
+                            </tr>
+                            <tr>
+                                <td>Kích thước</td>
+                                <td>Theo yêu cầu (đo đạc tại nhà)</td>
+                            </tr>
+                            <tr>
+                                <td>Màu sắc</td>
+                                <td>Trắng, kem, xám, nâu, xanh dương, xanh lá</td>
+                            </tr>
+                            <tr>
+                                <td>Bảo hành</td>
+                                <td>24 tháng</td>
+                            </tr>
+                            <tr>
+                                <td>Xuất xứ</td>
+                                <td>Việt Nam</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Back Button -->
+        <a href="#services" class="floating-back-btn" onclick="hideProductDetail()">
+            <svg viewBox="0 0 24 24" fill="white">
+                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+            </svg>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Về Chúng Tôi</h2>
+                    <p>Là cơ sở uy tín trong dịch vụ cung cấp dịch vụ do đạc, tư vấn, lắp đặt các loại rèm từ <b>2020</b>, chúng tôi tự hào mang đến cho khách hàng những sản phẩm chất lượng cao với dịch vụ chuyên nghiệp.</p>
+                    <p>Phía chúng tôi sẽ tận tâm tư vấn và hỗ trợ khách hàng lựa chọn sản phẩm phù hợp nhất với không gian và phong cách sống.</p>
+                    <p>Chúng tôi cam kết sử dụng những nguyên liệu tốt nhất, đảm bảo độ bền đẹp theo thời gian và an toàn cho sức khỏe người sử dụng.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zalo Contact Section -->
+    <section class="zalo-contact" id="zalo-contact">
+        <div class="container">
+            <div class="zalo-container">
+                <div class="zalo-info">
+                    <h3>Thông Tin Liên Hệ</h3>
+                    <p><strong>Địa chỉ:</strong> 23 Hoàng Nguyên Lễ, Cửa Lò, Nghệ An</p>
+                    <p><strong>Điện thoại:</strong> 0326 261 482 - 0977 652 872</p>
+                    <p><strong>Email:</strong> nhamayngubinh@gmail.com</p>
+                </div>
+                <div class="zalo-buttons">
+                    <a href="https://zalo.me/0326261482" class="zalo-btn" target="_blank">
+                        <svg class="zalo-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12,20c-4.41,0-8-3.59-8-8s3.59-8,8-8s8,3.59,8,8 S16.41,20,12,20z"/>
+                            <path d="M12,6c-3.31,0-6,2.69-6,6s2.69,6,6,6s6-2.69,6-6S15.31,6,12,6z M12,16c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4 S14.21,16,12,16z"/>
+                            <circle cx="12" cy="12" r="2"/>
+                        </svg>
+                        Liên hệ Zalo: 0326 261 482
+                    </a>
+                    <a href="https://zalo.me/0977652872" class="zalo-btn" target="_blank">
+                        <svg class="zalo-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12,20c-4.41,0-8-3.59-8-8s3.59-8,8-8s8,3.59,8,8 S16.41,20,12,20z"/>
+                            <path d="M12,6c-3.31,0-6,2.69-6,6s2.69,6,6,6s6-2.69,6-6S15.31,6,12,6z M12,16c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4 S14.21,16,12,16z"/>
+                            <circle cx="12" cy="12" r="2"/>
+                        </svg>
+                        Liên hệ Zalo: 0977 652 872
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2020 Rèm Đẹp Cửa Lò. Tất cả các quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Hiển thị trang chi tiết sản phẩm
+        function showProductDetail(title, price, productType) {
+            // Ẩn các phần khác
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('services').style.display = 'none';
+            document.getElementById('about').style.display = 'none';
+            document.getElementById('zalo-contact').style.display = 'none';
+            
+            // Hiển thị phần chi tiết sản phẩm
+            document.getElementById('product-detail').style.display = 'block';
+            
+            // Cập nhật thông tin sản phẩm
+            document.getElementById('product-title').textContent = title;
+            document.getElementById('product-price').textContent = formatPrice(price) + ' VNĐ';
+            
+            // Cập nhật hình ảnh và mô tả theo loại sản phẩm
+            updateProductDetails(productType);
+            
+            // Cuộn lên đầu trang
+            window.scrollTo(0, 0);
+        }
+        
+        // Ẩn trang chi tiết sản phẩm
+        function hideProductDetail() {
+            // Hiển thị lại các phần
+            document.getElementById('home').style.display = 'flex';
+            document.getElementById('services').style.display = 'block';
+            document.getElementById('about').style.display = 'block';
+            document.getElementById('zalo-contact').style.display = 'block';
+            
+            // Ẩn phần chi tiết sản phẩm
+            document.getElementById('product-detail').style.display = 'none';
+        }
+        
+        // Định dạng giá tiền
+        function formatPrice(price) {
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+        
+        // Thay đổi hình ảnh chính
+        function changeImage(src) {
+            document.getElementById('product-main-img').src = src;
+            
+            // Cập nhật trạng thái active của thumbnail
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+        }
+        
+        // Cập nhật chi tiết sản phẩm theo loại
+        function updateProductDetails(productType) {
+            const description = document.querySelector('.product-description');
+            const features = document.querySelector('.product-features ul');
+            const specs = document.querySelector('.specs-table');
+            
+            if (productType === 'rem-cuon') {
+                description.innerHTML = `
+                    <p>Rèm cuốn cao cấp của chúng tôi được làm từ chất liệu vải polyester cao cấp, có độ bền màu và khả năng chống bám bụi tốt. Sản phẩm phù hợp với mọi không gian từ phòng khách, phòng ngủ đến văn phòng làm việc.</p>
+                    <p>Với cơ chế cuốn lên xuống dễ dàng, rèm cuốn giúp kiểm soát ánh sáng tự nhiên một cách linh hoạt, mang lại sự tiện nghi và thẩm mỹ cho không gian sống của bạn.</p>
+                `;
+                
+                features.innerHTML = `
+                    <li>Chất liệu vải polyester cao cấp, không phai màu</li>
+                    <li>Hệ thống cuốn êm ái, vận hành trơn tru</li>
+                    <li>Đa dạng màu sắc và họa tiết</li>
+                    <li>Dễ dàng vệ sinh và bảo trì</li>
+                    <li>Chống tia UV, bảo vệ nội thất</li>
+                    <li>Lắp đặt nhanh chóng, chuyên nghiệp</li>
+                `;
+                
+                specs.innerHTML = `
+                    <tr>
+                        <td>Chất liệu</td>
+                        <td>Vải polyester cao cấp</td>
+                    </tr>
+                    <tr>
+                        <td>Kích thước</td>
+                        <td>Theo yêu cầu (đo đạc tại nhà)</td>
+                    </tr>
+                    <tr>
+                        <td>Màu sắc</td>
+                        <td>Trắng, kem, xám, nâu, xanh dương, xanh lá</td>
+                    </tr>
+                    <tr>
+                        <td>Bảo hành</td>
+                        <td>24 tháng</td>
+                    </tr>
+                    <tr>
+                        <td>Xuất xứ</td>
+                        <td>Việt Nam</td>
+                    </tr>
+                `;
+                
+                // Cập nhật hình ảnh
+                document.getElementById('product-main-img').src = 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80';
+                
+            } else if (productType === 'rem-vai') {
+                description.innerHTML = `
+                    <p>Rèm vải cao cấp được thiết kế từ những chất liệu vải nhập khẩu cao cấp, mang đến vẻ đẹp sang trọng và tinh tế cho không gian nội thất. Sản phẩm có độ rủ mềm mại, tạo cảm giác ấm cúng và thân thiện.</p>
+                    <p>Với đa dạng màu sắc, hoa văn và chất liệu, rèm vải của chúng tôi có thể đáp ứng mọi phong cách thiết kế từ cổ điển đến hiện đại, giúp tôn lên vẻ đẹp của ngôi nhà bạn.</p>
+                `;
+                
+                features.innerHTML = `
+                    <li>Chất liệu vải nhập khẩu cao cấp, mềm mại</li>
+                    <li>Đa dạng mẫu mã, màu sắc và hoa văn</li>
+                    <li>Độ rủ tự nhiên, tạo vẻ sang trọng</li>
+                    <li>Cách nhiệt và cách âm tốt</li>
+                    <li>Dễ dàng tháo lắp để vệ sinh</li>
+                    <li>Phù hợp với mọi không gian nội thất</li>
+                `;
+                
+                specs.innerHTML = `
+                    <tr>
+                        <td>Chất liệu</td>
+                        <td>Vải nhập khẩu (linen, cotton, polyester)</td>
+                    </tr>
+                    <tr>
+                        <td>Kích thước</td>
+                        <td>Theo yêu cầu (đo đạc tại nhà)</td>
+                    </tr>
+                    <tr>
+                        <td>Màu sắc</td>
+                        <td>Đa dạng (hơn 50 màu)</td>
+                    </tr>
+                    <tr>
+                        <td>Bảo hành</td>
+                        <td>36 tháng</td>
+                    </tr>
+                    <tr>
+                        <td>Xuất xứ</td>
+                        <td>Nhập khẩu Hàn Quốc, Đài Loan</td>
+                    </tr>
+                `;
+                
+                // Cập nhật hình ảnh
+                document.getElementById('product-main-img').src = 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80';
+                
+            } else if (productType === 'rem-roman') {
+                description.innerHTML = `
+                    <p>Rèm Roman kết hợp hoàn hảo giữa vẻ đẹp cổ điển và tính năng hiện đại. Với thiết kế gấp nếp tinh tế, rèm Roman tạo ra những đường nét mềm mại và thanh lịch cho không gian.</p>
+                    <p>Sản phẩm được làm từ chất liệu vải cao cấp, có khả năng cách nhiệt tốt và điều chỉnh ánh sáng linh hoạt. Rèm Roman phù hợp với nhiều phong cách nội thất khác nhau, từ tân cổ điển đến hiện đại.</p>
+                `;
+                
+                features.innerHTML = `
+                    <li>Thiết kế gấp nếp thanh lịch, sang trọng</li>
+                    <li>Chất liệu vải cao cấp, cách nhiệt tốt</li>
+                    <li>Điều chỉnh ánh sáng linh hoạt</li>
+                    <li>Dễ dàng vệ sinh và bảo trì</li>
+                    <li>Hệ thống kéo dây hoặc tự động</li>
+                    <li>Phù hợp với mọi không gian nội thất</li>
+                `;
+                
+                specs.innerHTML = `
+                    <tr>
+                        <td>Chất liệu</td>
+                        <td>Vải linen, cotton pha, polyester</td>
+                    </tr>
+                    <tr>
+                        <td>Kích thước</td>
+                        <td>Theo yêu cầu (đo đạc tại nhà)</td>
+                    </tr>
+                    <tr>
+                        <td>Màu sắc</td>
+                        <td>Trung tính, pastel, họa tiết tinh tế</td>
+                    </tr>
+                    <tr>
+                        <td>Bảo hành</td>
+                        <td>30 tháng</td>
+                    </tr>
+                    <tr>
+                        <td>Xuất xứ</td>
+                        <td>Nhập khẩu châu Âu, Hàn Quốc</td>
+                    </tr>
+                `;
+                
+                // Cập nhật hình ảnh
+                document.getElementById('product-main-img').src = 'https://images.unsplash.com/photo-1544457076-6dc240d250e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80';
+            }
+        }
+    </script>
+</body>
+</html>
